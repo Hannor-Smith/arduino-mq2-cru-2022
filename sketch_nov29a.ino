@@ -1,9 +1,9 @@
-int redLed = 12;
+int redLed = 8;
 // int greenLed = 11;
 int buzzer = 10;
 int smokeA0 = A5;
 // Your threshold value
-int sensorThres = 50;
+int sensorThres = 2500;
 
 void setup() {
   pinMode(redLed, OUTPUT);
@@ -22,14 +22,16 @@ void loop() {
   if (analogSensor > sensorThres)
   {
     digitalWrite(redLed, HIGH);
-//    digitalWrite(greenLed, LOW);
     tone(buzzer, 1000, 200);
+    delay(500);
+    digitalWrite(redLed, LOW);
+    noTone(buzzer);
+    delay(500);
   }
   else
   {
     digitalWrite(redLed, LOW);
-//    digitalWrite(greenLed, HIGH);
     noTone(buzzer);
   }
-  delay(100);
+  delay(500);
 }
