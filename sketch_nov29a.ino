@@ -3,7 +3,7 @@ int redLed = 8;
 int buzzer = 10;
 int smokeA0 = A5;
 // Your threshold value
-int sensorThres = 2500;
+// int sensorThres = 2500;
 
 void setup() {
   pinMode(redLed, OUTPUT);
@@ -19,14 +19,19 @@ void loop() {
   Serial.print("Pin A0: ");
   Serial.println(analogSensor);
   // Checks if it has reached the threshold value
-  if (analogSensor > sensorThres)
+  if (analogSensor >= 2000)
   {
     digitalWrite(redLed, HIGH);
     tone(buzzer, 1000, 200);
-    delay(500);
+  }
+  else if (analogSensor < 2000 && analogSensor >= 1200
+  {
+    digitalWrite(redLed, HIGH);
+    tone(buzzer, 1000, 200);
+    delay(200);
     digitalWrite(redLed, LOW);
     noTone(buzzer);
-    delay(500);
+    delay(200);
   }
   else
   {
