@@ -24,7 +24,7 @@ void loop() {
     digitalWrite(redLed, HIGH);
     tone(buzzer, 1000, 200);
   }
-  else if (analogSensor < 2000 && analogSensor >= 1200
+  else if (analogSensor < 2000 && analogSensor >= 1200)
   {
     digitalWrite(redLed, HIGH);
     tone(buzzer, 1000, 200);
@@ -32,6 +32,24 @@ void loop() {
     digitalWrite(redLed, LOW);
     noTone(buzzer);
     delay(200);
+  }
+  else if (analogSensor < 1200 && analogSensor >= 400)
+  {
+    digitalWrite(redLed, HIGH);
+    tone(buzzer, 1000, 200);
+    delay(500);
+    digitalWrite(redLed, LOW);
+    noTone(buzzer);
+    delay(500);
+  }
+  else if (analogSensor < 400 && analogSensor >= 100)
+  {
+    digitalWrite(redLed, HIGH);
+    tone(buzzer, 1000, 200);
+    delay(1000);
+    digitalWrite(redLed, LOW);
+    noTone(buzzer);
+    delay(1000);
   }
   else
   {
