@@ -47,7 +47,7 @@ void loop() {
     noTone(buzzer);
     delay(500);
   }
-  else if (analogSensor < 400 && analogSensor >= 100)
+  else if (analogSensor < 400 && analogSensor >= 200)
   {
     digitalWrite(redLed, HIGH);
     tone(buzzer, 1000, 200);
